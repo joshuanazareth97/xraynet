@@ -26,8 +26,10 @@ transformer = transforms.Compose([
 
 image = pil_loader(img_path)
 
-final_img = transformer(image)
+final_img = transformer(image).float()
+# import pdb; pdb.set_trace()
+final_img = Variable(final_img, requires_grad=True)
 
-final_img = Variable(image)
+output = model(final_img.unsqueeze(0).cuda())
 
-output = model(final_image)
+print(output)

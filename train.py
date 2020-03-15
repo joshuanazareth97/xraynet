@@ -35,7 +35,6 @@ def train_model(model, criterion, optimizer, dataloaders, scheduler,
                 # print(i, end='\r')
                 inputs = data['images'][0]
                 labels = data['label'].type(torch.FloatTensor)
-                print(inputs)
                 # wrap them in Variable
                 inputs = Variable(inputs.cuda())
                 labels = Variable(labels.cuda())
