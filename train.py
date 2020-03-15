@@ -53,7 +53,6 @@ def train_model(model, criterion, optimizer, dataloaders, scheduler,
                 preds = (outputs.data > 0.5).type(torch.cuda.FloatTensor)
                 preds_for_conf = torch.unsqueeze(preds, 0)
                 running_corrects += torch.sum(preds == labels.data)
-                import pdb; pdb.set_trace()
                 confusion_matrix[phase].add(preds_for_conf.data, labels.data)
             epoch_loss = running_loss.to(dtype=torch.float) / dataset_sizes[phase]
             epoch_acc = running_corrects.to(dtype=torch.float) / dataset_sizes[phase]
