@@ -3,7 +3,7 @@ anaconda-client==1.4.0
 anaconda-navigator==1.1.0
 argcomplete==1.0.0
 astropy==1.1.2
-Babel==2.2.0
+Babel==2.9.1
 beautifulsoup4==4.4.1
 bitarray==0.8.1
 blaze==0.9.1
